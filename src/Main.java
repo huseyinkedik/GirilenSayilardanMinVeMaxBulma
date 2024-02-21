@@ -2,27 +2,33 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        int n,a,b;
-
         Scanner input = new Scanner(System.in);
-        System.out.print("Kaç tane sayı girişi yapılacak:");
-        n = input.nextInt();
-        System.out.println("İlk sayıyı giriniz:");
-        int c = 2;
-        do {
-            a = input.nextInt();
-            System.out.println(c + " nolu sayıyı giriniz:");
-            b = input.nextInt();
-            if (a>b){
-                System.out.println("En büyük sayı: " + a);
-                System.out.println("En küçük sayı: " + b);
-            }else {
-                System.out.println("En küçük sayı: " + a);
-                System.out.println("En büyük sayı: " + b);
+
+        System.out.print("Kaç tane sayı girişi yapılacak: ");
+        int n = input.nextInt();
+
+        //Döngüyü 1 olarak başlatıyoruz
+        int c = 1;
+
+        System.out.print(" 1 nolu sayıyı giriniz: ");
+        int ilkDeger = input.nextInt();
+        int enBuyukSayi = ilkDeger;
+        int enKucukSayi = ilkDeger;
+
+        {
+            while (c < n) {
+                System.out.print(c + 1 + ". nolu sayıyı giriniz: ");
+                int yenideger = input.nextInt();
+
+                if (yenideger > enBuyukSayi) {
+                    enBuyukSayi = yenideger;
+                } else {
+                    enKucukSayi = yenideger;
                 }
-            c++;
-
-
-        }while (c > n);
+                c++;
+            }
+            System.out.println("En büyük sayı: " + enBuyukSayi);
+            System.out.println("En küçük sayı: " + enKucukSayi);
+        }
     }
 }
