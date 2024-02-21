@@ -19,7 +19,7 @@ public class Main {
             int a = input.nextInt();
             if (a > enBuyukSayi) {
                 enBuyukSayi = a;
-            } if (a > enKucukSayi){
+            } if (a < enKucukSayi){
                 enKucukSayi = a;
             }
         }
